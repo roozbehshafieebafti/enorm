@@ -3,6 +3,7 @@ import Link from "next/link";
 import clsx from "clsx";
 // styles
 import classes from "./styles/navbar.module.scss";
+import { Button } from "../button";
 
 export const Navbar: FC = () => {
   return (
@@ -31,7 +32,7 @@ export const Navbar: FC = () => {
         </Link>
       </div>
       <div className="d-flex align-items-center">
-        <button className="btn btn-primary">Find your car</button>
+        <Button shape="primay">Find your car</Button>
         <i className={clsx("bi bi-person-circle", classes["user-icon"])} />
       </div>
     </nav>
