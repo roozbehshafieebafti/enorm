@@ -11,10 +11,10 @@
 
 .button-secondary{
     background-color: inherit !important;
-    color: $primary;
-    border: 1px solid $primary;
+    color: $primary !important;
+    border: 1px solid $primary !important;
     &:hover{
-        background-color: $primary-dark !important;
+        background-color: $primary !important;
         color: $white !important;
     }
 }

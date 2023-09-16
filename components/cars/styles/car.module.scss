@@ -1,0 +1,54 @@
+@import "../../../public/styles/colors.scss";
+.root{
+    padding: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.picture{
+    div{
+        position: relative;
+        width:203px;
+        height:143px
+    }
+}
+.information{
+    margin-left: 32px;
+    .caption{
+        white-space: nowrap;
+        color: $disabled;
+        margin-left: 8px;
+    }
+    .data{
+        color: $black;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .information{
+        .margin{
+            margin-top: 16px;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .root{
+        flex-direction: column;
+    }
+    .picture{
+        display: flex;
+        justify-content: center;
+    }
+    .information{
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .root{
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+}
