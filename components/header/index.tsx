@@ -9,7 +9,7 @@ export const Header: FC = () => {
       <div className={classes.root}>
         <div className={classes.cover} />
         <div className={classes.content}>
-          <div>
+          <div className="container d-flex flex-column p-0">
             <h1>New BMW Cars</h1>
             <p className="body-1">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc

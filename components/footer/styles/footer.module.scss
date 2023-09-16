@@ -1,0 +1,36 @@
+@import "../../../public/styles/colors.scss";
+.root{
+    background-color: $gray;
+    height: 214px;
+    align-items: center;
+    justify-content: center;
+}
+
+.text{
+    margin: 32px 0px;
+    color: $white;
+    opacity: 50%;
+}
+
+.links{
+    color: $white;
+    transition: all 0.2s;
+    text-wrap: nowrap;
+    margin-top: 34px;
+    text-align: center;
+    &:hover{
+        color: $primary !important;
+    }
+    margin-bottom: 32px;
+}
+
+@media screen and (max-width: 768px) {
+    .root{
+        padding: 48px 24px 16px;
+        height: unset;
+    }
+    .links{
+        margin-top: 0px;
+        text-align: left;
+    }
+}

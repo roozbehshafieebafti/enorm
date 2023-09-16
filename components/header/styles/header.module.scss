@@ -23,8 +23,6 @@
     height: 100%;
     div{
         margin-top: 180px;
-        max-width: 810px;
-        margin-left: 255px;
         h1{
             padding: 0px;
             margin: 0px 0px 32px;
@@ -36,26 +34,15 @@
     }
 }
 
-
-@media screen and (max-width: 1024px) {
-    .content{
-        div{
-            margin-top: 206px;
-            max-width: 810px;
-            margin-left: 80px;
-        }
-    }
-}
-
 @media screen and (max-width: 768px) {
     .root{
-        height: 300px;
+        max-height: 320px;
     }
     .content{
         div{
             margin-top: 98px;
             margin-left: 0px;
-            padding: 0px 24px;
+            padding: 0px 24px !important;
             h1{
                 margin: 0px 0px 16px;
             }

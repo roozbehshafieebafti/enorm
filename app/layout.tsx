@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { Header } from "@/components/header";
 
 import "../public/styles/global.scss";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Enorm Test",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
