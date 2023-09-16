@@ -2,6 +2,7 @@
 .root{
     background-color: $white;
     padding: 0px 80px !important;
+    height: 72px;
 }
 
 .links{
@@ -19,4 +20,26 @@
 .user-icon{
     font-size: 32px;
     margin-left: 40px;
+}
+
+.list-icon{
+    font-size: 42px;
+    margin-left: 24px;
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .root{
+        padding: 0px 24px !important;
+    }
+    .links{
+        display: none;
+    }
+    .find-btn{
+        display: none !important;
+    }
+
+    .list-icon{
+        display: block;
+    }
 }

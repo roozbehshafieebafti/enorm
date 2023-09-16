@@ -32,8 +32,11 @@ export const Navbar: FC = () => {
         </Link>
       </div>
       <div className="d-flex align-items-center">
-        <Button shape="primay">Find your car</Button>
+        <Button shape="primay" className={classes["find-btn"]}>
+          Find your car
+        </Button>
         <i className={clsx("bi bi-person-circle", classes["user-icon"])} />
+        <i className={clsx("bi bi-list", classes["list-icon"])} />
       </div>
     </nav>
   );

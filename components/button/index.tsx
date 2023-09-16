@@ -10,15 +10,20 @@ interface buttonType
   shape: "primay" | "secondary";
 }
 
-export const Button: FC<buttonType> = ({ children, shape, ...props }) => {
+export const Button: FC<buttonType> = ({
+  children,
+  className,
+  shape,
+  ...props
+}) => {
   return (
     <button
       className={clsx(
         "btn",
+        className,
         shape === "primay"
           ? classes["button-primary"]
-          : classes["button-secondary"],
-        props.className
+          : classes["button-secondary"]
       )}
       {...props}
     >
