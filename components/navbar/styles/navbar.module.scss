@@ -1,0 +1,22 @@
+@import "../../../public/styles/colors.scss";
+.root{
+    background-color: $white;
+    padding: 0px 80px !important;
+}
+
+.links{
+    display: block;
+    color: $dark;
+    transition: all 0.2s;
+    margin: 28px 36px 0px;
+    padding: 0px 0px 21px;
+    border-bottom: 4px solid $white;
+    &:hover{
+        border-color: $primary;
+    }
+}
+
+.user-icon{
+    font-size: 32px;
+    margin-left: 40px;
+}
