@@ -19,7 +19,7 @@ export const Navbar: FC = () => {
           <span>Car</span>
         </Link>
         <Link href="/" className={clsx("body-1 no-decoration", classes.links)}>
-          New ars
+          New cars
         </Link>
         <Link href="/" className={clsx("body-1 no-decoration", classes.links)}>
           Used cars
