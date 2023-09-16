@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 import "../public/styles/global.scss";
-import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Enorm Test",

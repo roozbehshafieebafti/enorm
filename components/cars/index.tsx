@@ -7,7 +7,7 @@ import { Button } from "../button";
 
 export const CarsCard: FC = () => {
   return (
-    <div className={clsx("card mt-5", classes.root)}>
+    <div className={clsx("card", classes.root)}>
       <div className={classes.picture}>
         <div>
           <Image src="/images/car.png" layout="fill" alt={"car"} />
