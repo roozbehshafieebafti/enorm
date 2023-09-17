@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
-export const useSize = (pixcel: number) => {
+export const useSize = (pixel: number) => {
   const [isDesktop, setIsdesktop] = useState<boolean>();
   useEffect(() => {
     if (typeof window === "object") {
-      if (window.innerWidth < pixcel) {
+      if (window.innerWidth < pixel) {
         setIsdesktop(false);
       } else {
         {
           setIsdesktop(true);
         }
         window.addEventListener("resize", function () {
-          if (window.innerWidth < pixcel) {
+          if (window.innerWidth < pixel) {
             setIsdesktop(false);
           } else {
             setIsdesktop(true);
@@ -19,7 +19,7 @@ export const useSize = (pixcel: number) => {
         });
       }
     }
-  }, []);
+  }, [pixel]);
 
   return isDesktop;
 };
