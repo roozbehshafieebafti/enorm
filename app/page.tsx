@@ -2,6 +2,7 @@
 import { CarInput, getAllCars } from "@/apis/cars";
 import { CarType } from "@/apis/cars/types";
 import { CarsCard } from "@/components/cars";
+import { CarsSkeleton } from "@/components/cars/skeleton";
 import { Pagination } from "@/components/paggination";
 import { Filters } from "@/containers/home/filters";
 import { PresentedCarType, HomeContext } from "@/containers/home/home-context";
@@ -74,7 +75,10 @@ export default function Home() {
                   total={listCars.total}
                 />
               )}
-              {loading && <>loading ...!</>}
+              {loading &&
+                Array.from({ length: 10 }, () => Math.random()).map((item) => {
+                  return <CarsSkeleton key={item} />;
+                })}
             </div>
           </div>
         </div>
