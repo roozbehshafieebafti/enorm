@@ -3,20 +3,9 @@ import { CarInput, getAllCars } from "@/apis/cars";
 import { CarType } from "@/apis/cars/types";
 import { CarsCard } from "@/components/cars";
 import { Filters } from "@/components/filters";
-import { createContext, useCallback, useEffect, useState } from "react";
-
-interface PresentedCarType {
-  page: number;
-  limit: number;
-  cars: CarType[];
-}
-
-export const PAGE_LIMIT_SIZE = 10;
-
-export const HomeContext = createContext<{
-  allCars?: CarType[];
-  setCars?: (input?: PresentedCarType) => void;
-}>({});
+import { PresentedCarType, HomeContext } from "@/containers/home/home-context";
+import { PAGE_LIMIT_SIZE } from "@/utils/constants";
+import { useCallback, useEffect, useState } from "react";
 
 export default function Home() {
   const [allCars, setAllCars] = useState<CarType[]>();
