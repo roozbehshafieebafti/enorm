@@ -86,15 +86,13 @@ export const Milage: MilageType[] = [
 ];
 
 export const Price: PriceType[] = [
-  { id: 1, price: 2500 },
-  { id: 1, price: 5000 },
-  { id: 1, price: 7500 },
-  { id: 1, price: 10000 },
-  { id: 1, price: 12000 },
-  { id: 1, price: 15000 },
-  { id: 1, price: 20000 },
-  { id: 1, price: 25000 },
-  { id: 1, price: 50000 },
-  { id: 1, price: 75000 },
-  { id: 1, price: 100000 },
+  { id: 1, price: 200000 },
+  { id: 1, price: 300000 },
+  { id: 1, price: 400000 },
+  { id: 1, price: 500000 },
+  { id: 1, price: 600000 },
+  { id: 1, price: 700000 },
+  { id: 1, price: 800000 },
+  { id: 1, price: 900000 },
+  { id: 1, price: 1000000 },
 ];

@@ -1,5 +1,5 @@
 "use client";
-import { FC, useContext, useState } from "react";
+import { FC, useCallback, useContext, useEffect, useState } from "react";
 import classes from "./styles/filters.module.scss";
 import clsx from "clsx";
 import { Dropdown } from "../../../components/dropdown";
@@ -17,9 +17,11 @@ import {
   Years,
 } from "./options";
 import { Button } from "@/components/button";
+import { CarType } from "@/apis/cars/types";
+import { PAGE_LIMIT_SIZE } from "@/utils/constants";
 
 export const Filters: FC = () => {
-  const { allCars } = useContext(HomeContext);
+  const { allCars, setCars } = useContext(HomeContext);
   const [showFilters, setShowfilters] = useState<boolean>(true);
   const [price, setPrice] = useState<{
     from?: PriceType;
@@ -71,6 +73,75 @@ export const Filters: FC = () => {
   const MakeEl = (props: MakeType) => {
     return <div className="body-1">{props.name} KM</div>;
   };
+
+  const filterProcess = useCallback(() => {
+    if (allCars) {
+      let list: CarType[] = [...allCars];
+      if (make) {
+        const result = list.filter((item) => item.make === make.name);
+        list = [...result];
+      }
+
+      if (color) {
+        const result = list.filter((item) => item.color === color.name);
+        list = [...result];
+      }
+
+      if (year.from?.year) {
+        const result = list.filter(
+          (item) => Number(item.year) >= Number(year.from?.year)
+        );
+        list = [...result];
+      }
+
+      if (year.till?.year) {
+        const result = list.filter(
+          (item) => Number(item.year) <= Number(year.till?.year)
+        );
+        list = [...result];
+      }
+
+      if (price.from?.price) {
+        const result = list.filter(
+          (item) => Number(item.price) >= Number(price.from?.price)
+        );
+        list = [...result];
+      }
+
+      if (price.till?.price) {
+        const result = list.filter(
+          (item) => Number(item.price) <= Number(price.till?.price)
+        );
+        list = [...result];
+      }
+
+      if (milage.from?.milage) {
+        const result = list.filter(
+          (item) => Number(item.kilometer) >= Number(milage.from?.milage)
+        );
+        list = [...result];
+      }
+
+      if (milage.till?.milage) {
+        const result = list.filter(
+          (item) => Number(item.kilometer) <= Number(milage.till?.milage)
+        );
+        list = [...result];
+      }
+
+      setCars &&
+        setCars({
+          limit: PAGE_LIMIT_SIZE,
+          cars: list.slice(0, PAGE_LIMIT_SIZE),
+          page: 1,
+        });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [make, color, milage, year, price, allCars]);
+
+  useEffect(() => {
+    filterProcess();
+  }, [filterProcess]);
 
   return (
     <div className={classes.root}>
