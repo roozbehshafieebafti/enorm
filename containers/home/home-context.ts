@@ -5,6 +5,7 @@ export interface PresentedCarType {
   page: number;
   limit: number;
   cars: CarType[];
+  total: number;
 }
 
 export const HomeContext = createContext<{

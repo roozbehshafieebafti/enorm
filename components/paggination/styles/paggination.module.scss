@@ -1,0 +1,16 @@
+.numbers{
+    border: none;
+    background-color: inherit;
+}
+.active {
+    font-weight: bold !important;
+}
+.next{
+    border: none;
+    background-color: inherit;
+    i{
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 6px;
+    }
+}

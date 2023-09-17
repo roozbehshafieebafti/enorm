@@ -132,8 +132,9 @@ export const Filters: FC = () => {
       setCars &&
         setCars({
           limit: PAGE_LIMIT_SIZE,
-          cars: list.slice(0, PAGE_LIMIT_SIZE),
-          page: 1,
+          total: list.length,
+          cars: list,
+          page: 0,
         });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
