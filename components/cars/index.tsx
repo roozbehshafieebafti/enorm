@@ -4,8 +4,9 @@ import Image from "next/image";
 import classes from "./styles/car.module.scss";
 import clsx from "clsx";
 import { Button } from "../button";
+import { CarType } from "@/apis/cars/types";
 
-export const CarsCard: FC = () => {
+export const CarsCard: FC<CarType> = (car) => {
   return (
     <div className={clsx("card", classes.root)}>
       <div className={classes.picture}>
@@ -16,7 +17,9 @@ export const CarsCard: FC = () => {
       <div className={clsx("p-0", classes.information)}>
         <div className="container">
           <div className="row mb-3">
-            <span className="title-2 p-0">Humda</span>
+            <span className="title-2 p-0">
+              {car.make} - {car.model}
+            </span>
           </div>
           <div className="row">
             <div className="col-lg-4 col-6 mb-3 p-0">
@@ -29,7 +32,9 @@ export const CarsCard: FC = () => {
                 />
                 <span className={clsx("caption", classes.caption)}>Milage</span>
               </div>
-              <div className={clsx("body-1", classes.data)}>69.426 km</div>
+              <div className={clsx("body-1", classes.data)}>
+                {car.kilometer} km
+              </div>
             </div>
             <div className="col-lg-4 col-6 p-0">
               <div>
@@ -43,7 +48,9 @@ export const CarsCard: FC = () => {
                   Transmission
                 </span>
               </div>
-              <div className={clsx("body-1", classes.data)}>69.426 km</div>
+              <div className={clsx("body-1", classes.data)}>
+                {car.transmission}
+              </div>
             </div>
             <div className="col-lg-4 col-6 p-0">
               <div>
@@ -55,7 +62,7 @@ export const CarsCard: FC = () => {
                 />
                 <span className={clsx("caption", classes.caption)}>Year</span>
               </div>
-              <div className={clsx("body-1", classes.data)}>69.426 km</div>
+              <div className={clsx("body-1", classes.data)}>{car.year}</div>
             </div>
             <div className="col-lg-4 col-6 p-0">
               <div>
@@ -67,7 +74,9 @@ export const CarsCard: FC = () => {
                 />
                 <span className={clsx("caption", classes.caption)}>Intake</span>
               </div>
-              <div className={clsx("body-1", classes.data)}>69.426 km</div>
+              <div className={clsx("body-1", classes.data)}>
+                {car.fuel_tank_capacity}
+              </div>
             </div>
             <div className={clsx("col-lg-4 col-6 p-0", classes.margin)}>
               <div style={{ whiteSpace: "nowrap" }}>
@@ -81,7 +90,9 @@ export const CarsCard: FC = () => {
                   Power KW (PK)
                 </span>
               </div>
-              <div className={clsx("body-1", classes.data)}>69.426 km</div>
+              <div className={clsx("body-1", classes.data)}>
+                {car.max_power}
+              </div>
             </div>
             <div className={clsx("col-lg-4 col-6 p-0", classes.margin)}>
               <div>
@@ -93,7 +104,7 @@ export const CarsCard: FC = () => {
                 />
                 <span className={clsx("caption", classes.caption)}>Color</span>
               </div>
-              <div className={clsx("body-1", classes.data)}>69.426 km</div>
+              <div className={clsx("body-1", classes.data)}>{car.color}</div>
             </div>
           </div>
         </div>
