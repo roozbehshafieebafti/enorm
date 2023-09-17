@@ -1,26 +1,30 @@
 "use client";
-import { FC, ReactNode, useState } from "react";
+import { FC, useState } from "react";
 import classes from "./styles/dropdown.module.scss";
 import clsx from "clsx";
 
-interface DropdownType {
+interface DropdownType<T> {
   placeholder?: string;
   className?: string;
-  options: { [key: string]: unknown }[];
-  label: string;
-  onChange: (val: { [key: string]: unknown }) => void;
+  options: T[];
+  value?: T;
+  Label: FC<T>;
+  onChange: (val?: T) => void;
   leftRadius?: boolean;
   rightRadius?: boolean;
 }
 
-export const Dropdown: FC<DropdownType> = ({
+export const Dropdown: <T>(
+  props: DropdownType<T>
+) => React.ReactElement<DropdownType<T>> = ({
   placeholder,
   className,
   options,
-  label,
+  Label,
   onChange,
   leftRadius,
   rightRadius,
+  value,
 }) => {
   const [isOpne, setIsopen] = useState(false);
   return (
@@ -36,8 +40,20 @@ export const Dropdown: FC<DropdownType> = ({
           rightRadius && classes["right-radius"]
         )}
       >
-        <input type="text" disabled placeholder={placeholder} />
-        <i className={`bi ${isOpne ? "bi-chevron-up" : "bi-chevron-down"}`} />
+        {!value && <input type="text" disabled placeholder={placeholder} />}
+        {value && <Label {...value} />}
+        {!value && (
+          <i className={`bi ${isOpne ? "bi-chevron-up" : "bi-chevron-down"}`} />
+        )}
+        {value && (
+          <i
+            className="bi bi-x-lg"
+            onClick={(e) => {
+              e.stopPropagation();
+              onChange();
+            }}
+          />
+        )}
       </div>
       {isOpne && (
         <ul className={classes.selection}>
@@ -49,7 +65,7 @@ export const Dropdown: FC<DropdownType> = ({
                   onChange(content);
                 }}
               >
-                {content[label] as ReactNode | string}
+                {content && <Label {...content} />}
               </li>
             );
           })}

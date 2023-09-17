@@ -2,7 +2,7 @@
 import { CarInput, getAllCars } from "@/apis/cars";
 import { CarType } from "@/apis/cars/types";
 import { CarsCard } from "@/components/cars";
-import { Filters } from "@/components/filters";
+import { Filters } from "@/containers/home/filters";
 import { PresentedCarType, HomeContext } from "@/containers/home/home-context";
 import { PAGE_LIMIT_SIZE } from "@/utils/constants";
 import { useCallback, useEffect, useState } from "react";
