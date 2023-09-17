@@ -17,6 +17,7 @@ export const Filters: FC = () => {
           label="label"
           onChange={(val) => console.log(val)}
           leftRadius
+          placeholder="till"
         />
         <Dropdown
           className="mb-4 col-6"
@@ -24,6 +25,7 @@ export const Filters: FC = () => {
           label="label"
           onChange={(val) => console.log(val)}
           rightRadius
+          placeholder="from"
         />
       </div>
       <p className="m-0 p-0 sub-title-1 mb-3">Year</p>
@@ -34,6 +36,7 @@ export const Filters: FC = () => {
           label="label"
           onChange={(val) => console.log(val)}
           leftRadius
+          placeholder="till"
         />
         <Dropdown
           className="mb-4 col-6"
@@ -41,6 +44,7 @@ export const Filters: FC = () => {
           label="label"
           onChange={(val) => console.log(val)}
           rightRadius
+          placeholder="from"
         />
       </div>
       <p className="m-0 p-0 sub-title-1 mb-3">Milage</p>
@@ -51,6 +55,7 @@ export const Filters: FC = () => {
           label="label"
           onChange={(val) => console.log(val)}
           leftRadius
+          placeholder="till"
         />
         <Dropdown
           className="mb-4 col-6"
@@ -58,6 +63,7 @@ export const Filters: FC = () => {
           label="label"
           onChange={(val) => console.log(val)}
           rightRadius
+          placeholder="from"
         />
       </div>
       <p className="m-0 p-0 sub-title-1 mb-3">color</p>
