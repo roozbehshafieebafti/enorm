@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/button";
 import { CarType } from "@/apis/cars/types";
 import { PAGE_LIMIT_SIZE } from "@/utils/constants";
+import { useSize } from "@/utils/useSize";
 
 export const Filters: FC = () => {
   const { allCars, setCars } = useContext(HomeContext);
@@ -37,6 +38,8 @@ export const Filters: FC = () => {
   }>({});
   const [color, setColor] = useState<ColorType>();
   const [make, setMake] = useState<MakeType>();
+
+  const isDesktop = useSize(992);
 
   const PriceEl = (props: PriceType) => {
     return (
@@ -73,6 +76,12 @@ export const Filters: FC = () => {
   const MakeEl = (props: MakeType) => {
     return <div className="body-1">{props.name} KM</div>;
   };
+
+  useEffect(() => {
+    if (isDesktop !== undefined) {
+      setShowfilters(isDesktop);
+    }
+  }, [isDesktop]);
 
   const filterProcess = useCallback(() => {
     if (allCars) {
