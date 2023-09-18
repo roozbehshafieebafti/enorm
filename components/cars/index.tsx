@@ -49,7 +49,7 @@ export const CarsCard: FC<CarType> = (car) => {
                 </span>
               </div>
               <div className={clsx("body-1", classes.data)}>
-                {car.transmission}
+                {car.transmission ?? "--"}
               </div>
             </div>
             <div className="col-lg-4 col-6 p-0">
@@ -62,7 +62,9 @@ export const CarsCard: FC<CarType> = (car) => {
                 />
                 <span className={clsx("caption", classes.caption)}>Year</span>
               </div>
-              <div className={clsx("body-1", classes.data)}>{car.year}</div>
+              <div className={clsx("body-1", classes.data)}>
+                {car.year ?? "--"}
+              </div>
             </div>
             <div className="col-lg-4 col-6 p-0">
               <div>
@@ -75,7 +77,7 @@ export const CarsCard: FC<CarType> = (car) => {
                 <span className={clsx("caption", classes.caption)}>Intake</span>
               </div>
               <div className={clsx("body-1", classes.data)}>
-                {car.fuel_tank_capacity}
+                {car.fuel_tank_capacity ?? "--"}
               </div>
             </div>
             <div className={clsx("col-lg-4 col-6 p-0", classes.margin)}>
@@ -91,7 +93,7 @@ export const CarsCard: FC<CarType> = (car) => {
                 </span>
               </div>
               <div className={clsx("body-1", classes.data)}>
-                {car.max_power}
+                {car.max_power ?? "--"}
               </div>
             </div>
             <div className={clsx("col-lg-4 col-6 p-0", classes.margin)}>
@@ -104,7 +106,9 @@ export const CarsCard: FC<CarType> = (car) => {
                 />
                 <span className={clsx("caption", classes.caption)}>Color</span>
               </div>
-              <div className={clsx("body-1", classes.data)}>{car.color}</div>
+              <div className={clsx("body-1", classes.data)}>
+                {car.color ?? "--"}
+              </div>
             </div>
           </div>
         </div>
